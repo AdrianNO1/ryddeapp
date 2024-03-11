@@ -5,10 +5,9 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import Sidebar from '../components/sidebar';
 
-const points = '69';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, pfp }) {
+export default function Layout({ children, pfp, name, points, pfpscr, title }) {
 	return (
 		<div className={styles.container}>
 			<Sidebar></Sidebar>
@@ -32,41 +31,42 @@ export default function Layout({ children, pfp }) {
 					<>
 						<Image
 							priority
-							src="/images/profile.png"
+							src="/images/profile.jpg"
 							className={utilStyles.borderCircle}
 							height={144}
 							width={144}
 							alt=""
 						/>
-						<h1 className={utilStyles.heading2Xl}>Points: {points}</h1>
+						<h1 className={utilStyles.headingName}>{name}</h1>
+						{title ? <h1 className={utilStyles.headingXllight}>{title}</h1> : <h1 className={utilStyles.headingXl}>Points: {points}</h1>}
 					</>
 				) : pfp === "small" ? (
 					<>
 						<Link href="/">
 							<Image
 								priority
-								src="/images/profile.png"
+								src="/images/profile.jpg"
 								className={utilStyles.borderCircle}
 								height={75}
 								width={75}
 								alt=""
 							/>
 						</Link>
-						<h1 className={utilStyles.headingXl}>Points: {points}</h1>
+						{title ? <h1 className={utilStyles.headingXllight}>{title}</h1> : <h1 className={utilStyles.headingXllight}>Points: {points}</h1>}
 					</>
 				) : pfp === "corner" ? (
 					<>
 						<Link href="/">
 							<Image
 								priority
-								src="/images/profile.png"
+								src="/images/profile.jpg"
 								className={`${utilStyles.borderCircle} ${utilStyles.cornerpfp}`}
 								height={75}
 								width={75}
 								alt=""
 							/>
 						</Link>
-						<h1 className={utilStyles.headingXl}>Points: {points}</h1>
+						{title ? <h1 className={utilStyles.headingXllight}>{title}</h1> : <h1 className={utilStyles.headingXllight}>Points: {points}</h1>}
 					</>
 				) : <></>}
 			</header>

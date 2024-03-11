@@ -1,0 +1,47 @@
+.childRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.childInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.childName {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.childPoints {
+	font-size: 14px;
+	color: #666;
+}
+
+.viewTasksButton {
+	background-color: transparent;
+	border: none;
+	color: #007bff;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.childImage {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 5px;
+}
+
+.addChildButton{
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+}

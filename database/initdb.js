@@ -12,7 +12,7 @@ let db = new sqlite3.Database('./database.db', (err) => {
 	console.log('Connected to the local SQLite database.');
 });
 
-const sql = fs.readFileSync(`C:\\Users\\adria\\Desktop\\Coding\\ryddeapp\\sql\\initdb.sql`/*path.join(process.cwd(), 'sql', 'initdb.sql')*/, 'utf-8')
+const sql = fs.readFileSync(`C:\\Users\\adria\\Desktop\\Coding\\ryddeapp\\database\\initdb.sql`/*path.join(process.cwd(), 'sql', 'initdb.sql')*/, 'utf-8')
 
 // Create a sample table
 db.exec(sql, (err) => {

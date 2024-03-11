@@ -1,11 +1,12 @@
 import sqlite3 from 'sqlite3';
-import fs from 'fs';
+import fs, { link } from 'fs';
 import path from 'path';
-import getData from "../../database/runsql"
+import runQuery from "../../database/runsql"
 
 
 
 export default async function handler(req, res) {
+    const { token } = req.body;
 	const db = new sqlite3.Database('./database/database.db', sqlite3.OPEN_READWRITE, (err) => {
 		if (err) {
 			console.error(err.message);
@@ -15,9 +16,11 @@ export default async function handler(req, res) {
 	});
 
 	try {
-		const sql = fs.readFileSync(path.join(process.cwd(), 'sql', 'getTasks.sql'), 'utf-8')
-		const rows = await getData(db, sql);
-		res.status(200).json(rows);
+        const code = Math.floor(100000 + Math.random() * 900000);
+		let sql = `INSERT INTO linking_codes (expiry_datetime, code, host) VALUES (datetime('now', '+1 day'), ${code}, (SELECT host FROM parents WHERE token = ?))`;
+		await runQuery(db, sql, [token]);
+
+		res.status(200).json({linkingCode: code});
 	} catch (error) {
 		res.status(500).json({ error: `Failed to process the request: ${error}` });
 	} finally {

@@ -1,0 +1,99 @@
+.taskTemplate {
+	border: 1px solid #ccc;
+	padding: 16px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+	font-size: 18px;
+}
+
+.addButton {
+	background-color: #000;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.template {
+	border: 1px solid orange;
+	padding: 8px;
+	position: relative;
+}
+
+.templateInUse {
+	border: 1px solid green;
+}
+
+.title {
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+.editButton,
+.deleteButton {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background-color: #f0f0f0;
+	border: 1px solid #ddd;
+	padding: 2px 8px;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.editButton {
+	right: 60px;
+}
+
+.deleteButton {
+	right: 8px;
+}
+
+.description {
+	margin-bottom: 4px;
+}
+
+.rewards {
+	font-size: 14px;
+	color: #555;
+}
+
+
+
+
+.modalOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+  
+.modalContent {
+	background: white;
+	padding: 20px;
+	width: 80%;
+	border-radius: 5px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modelAssignedTo{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+	font-size: 18px;
+}

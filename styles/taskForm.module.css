@@ -1,0 +1,72 @@
+
+.taskForm {
+	border: 1px solid #ccc;
+	padding: 16px;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin-top: 16px;
+}
+
+.field {
+	margin-bottom: 16px;
+}
+
+.field label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+}
+
+.field input[type="text"],
+.field input[type="number"],
+.field textarea,
+.field select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ddd;
+	margin-bottom: 4px;
+}
+
+.field input[type="checkbox"] {
+	margin-right: 8px;
+}
+
+.dayButtonOn {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	margin-right: 4px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.dayButtonOff {
+	background-color: #b0b0b0;
+	color: #000000;
+	border: none;
+	padding: 8px 16px;
+	margin-right: 4px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.createTaskButton {
+	background-color: #28a745;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 4px;
+}
+
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.error{
+	color: red;
+	font-size: 14px;
+}
